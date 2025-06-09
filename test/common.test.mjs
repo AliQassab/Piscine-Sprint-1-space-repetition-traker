@@ -1,4 +1,4 @@
-import { getUserIDs } from "./common.mjs";
+import { getUserIDs } from "../data/common.mjs";
 import assert from "node:assert";
 import test from "node:test";
 
