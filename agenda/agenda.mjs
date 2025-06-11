@@ -41,6 +41,7 @@ export function renderAgenda(userId) {
     list.appendChild(li);
     
   });
-
   
+  //show clearbutton
+  clearBtn.hidden=false;
 }
