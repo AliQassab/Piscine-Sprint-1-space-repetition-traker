@@ -4,14 +4,8 @@
 
 export function getRevisionDates(startDate, topic) {
   const start = new Date(startDate);
-  if (isNaN(start)) throw new Error("Invalid start date"); // checks for valid date
-
-  // Format date to 'YYYY-MM-DD'
-  const toISODate = (date) => date.toISOString().split("T")[0];
-  const todayISO = toISODate(new Date());
-  const revisions = [];
-
-  // Intervals for spaced repetition
+  const todayStr = new Date().toISOString().split(“T”)[0];
+  const toISO = (date) => date.toISOString().split(“T”)[0];
   const intervals = [
     { days: 7 },
     { months: 1 },
@@ -19,8 +13,7 @@ export function getRevisionDates(startDate, topic) {
     { months: 6 },
     { years: 1 },
   ];
-
-  // Helper function to add intervals to a date
+  const revisions = [];
   for (const interval of intervals) {
     const date = new Date(start); // clone the start date
     // Apply the interval (only one key per object)
