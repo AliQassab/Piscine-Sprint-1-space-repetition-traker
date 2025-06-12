@@ -18,3 +18,4 @@ test('calculate correct repetition dates', () => {
   ];
   assert.deepEqual(dates, expected);
 });
+
