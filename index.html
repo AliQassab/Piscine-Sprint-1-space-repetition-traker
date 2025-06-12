@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Spaced Repetition Tracker">
     <title>Spaced Repetition Tracker</title>
   </head>
+
   <body>
     <h1>Spaced Repetition Tracker</h1>
- 
-    <div>
+
+    <!-- Section for the dropdown user selection -->
+    <section>
       <label for="user-select">Select User:</label>
       <select id="user-select">
         <option value="">Select a User</option>
-        <!-- Options will be populated by JavaScript -->
+       <!-- Options will be added by JavaScript -->
       </select>
-      <button id="clear-btn">Clear User Data</button>
-    </div>
+      <button id="clear-btn" hidden>Clear User Data</button>
+    </section>
 
-    <form id="topic-form">
-      <div>
-        <label for="topic-name">Topic Name:</label>
-        <input type="text" id="topic-name" required />
-      </div>
+    <!-- Section for add a new topic -->
+    <section id="form-section">
+      <h2>Add New Topic</h2>
+      <form id="topic-form">
+        <input type="text" id="topic-name" placeholder="Topic Name" required />
+        <input type="date" id="topic-date" required aria-label="date"/>
+        <button type="submit">Add Topic</button>
+      </form>
+    </section> 
 
-      <div>
-        <label for="topic-date">Start Date:</label>
-        <input type="date" id="topic-date" required />
-      </div>
+    <!-- Section to display the user's revision agenda -->
+    <section id="agenda">
+      <h2>Agenda</h2>
+      <ul id="agenda-list"></ul>
+      <p id="no-agenda-msg"></p>
+    </section> 
 
-      <button type="submit">Add Topic</button>
-    </form>
-    <div id="agenda">
-      <!-- Agenda items will be displayed here -->
-    </div>
-    <script type="module" src="script.js"></script>
+    <!-- Load the main JavaScript file -->
+    <script type="module" src="./script.mjs"></script>
   </body>
 </html>
