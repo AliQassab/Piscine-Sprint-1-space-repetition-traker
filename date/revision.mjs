@@ -5,7 +5,9 @@
 export function getRevisionDates(startDate, topic) {
   const start = new Date(startDate);
   const todayStr = new Date().toISOString().split("T")[0];
-  const toISO = (date) => date.toISOString().split("T")[0];
+  // const toISO = (date) => date.toISOString().split("T")[0];
+  const toISO = (date) => date.toLocaleDateString("en-CA");
+  console.log(toISO(start));
   const intervals = [
     { days: 7 },
     { months: 1 },
